@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import ExpenseTracker from "./transactions/pages/ExpenseTracker";
+import Graph from "./transactions/components/Graph";
+import Form from "./transactions/components/Form";
+import "./App.css";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ExpenseTracker />
+      <div className="chart">
+        <Graph />
+        <Form />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
