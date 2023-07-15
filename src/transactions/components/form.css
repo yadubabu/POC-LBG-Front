@@ -5,6 +5,7 @@
     border: none;
     /* border-bottom: 1px solid grey; */
     width: fit-content;
+    padding: 5px;
     box-shadow: 0 0 5px grey;
 }
 .border-btn{
