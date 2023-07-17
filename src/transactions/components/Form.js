@@ -6,12 +6,13 @@ import List from "./List";
 import { api } from "../api";
 import { useSelector, useDispatch } from "react-redux";
 import { colorAct } from "../../redux/actions/colorAction";
+
 const Form = () => {
   const tot = useSelector((state) => state.color);
   console.log(tot);
   const dispatch = useDispatch();
 
-  const { register, handleSubmit, resetField } = useForm();
+  // const { register, handleSubmit, resetField } = useForm();
   const [name, setName] = useState();
   const [type, setType] = useState();
   const [amount, setAmount] = useState();

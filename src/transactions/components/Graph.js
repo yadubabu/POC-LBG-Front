@@ -2,7 +2,9 @@ import React from "react";
 import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement } from "chart.js";
 import Labels from "./Labels";
+import { useSelector } from "react-redux";
 import "./graph.css";
+import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 
 Chart.register(ArcElement);
 
@@ -27,8 +29,15 @@ const config = {
   },
 };
 const Graph = () => {
+  const tot = useSelector((state) => state.total);
+
   return (
     <div className="flex justify-content max-w-xs-mx-auto">
+      <span>
+        Account Balance-
+        <CurrencyRupeeIcon style={{ fontSize: "15px" }} />
+        {tot}
+      </span>
       <div className="item">
         <div className="chart relative">
           <Doughnut {...config}></Doughnut>

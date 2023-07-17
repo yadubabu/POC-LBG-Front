@@ -17,6 +17,7 @@
     position: absolute;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     font-size: 90%;
    margin-top: 80px; 
 }
