@@ -5,38 +5,33 @@ import "./form.css";
 import List from "./List";
 import { api } from "../api";
 import { useSelector, useDispatch } from "react-redux";
-import { colorAct } from "../../redux/actions/colorAction";
-import { getPercent } from "../../redux/actions/objActions";
-
+import { getBalance } from "../../redux/actions/getBalance";
 const Form = () => {
-  const tot = useSelector((state) => state.total);
-  console.log(tot);
+  const [totals, setTotals] = useState();
   const dispatch = useDispatch();
-
   const { register, handleSubmit, resetField } = useForm();
-  const [name, setName] = useState();
-  const [type, setType] = useState();
-  const [amount, setAmount] = useState();
-  const [date, setDate] = useState();
-  const [trans, setTrans] = useState();
-  const [per, setPer] = useState();
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/getbalance/balance")
+      .then((res) => setTotals(res.data))
+      .catch((err) => console.log(err));
+  }, [register]);
+  if (totals !== "") {
+    dispatch(getBalance(totals));
+  }
 
   const submitTrans = async (data) => {
-    // console.log(data);
-    // e.preventDefault();
-    // const { name, type, amount, date } = data;
-    const val = await axios
+    await axios
       .post("http://localhost:5000/addtrans", {
         name: data.name,
         type: data.type,
         amount: data.amount,
         date: data.date,
       })
-      .then((res) => dispatch(getPercent(res.data)))
+      .then((res) => console.log(res.data))
+
       .catch((err) => console.log(err));
-    if (val) {
-      setPer(val);
-    }
   };
 
   return (

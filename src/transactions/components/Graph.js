@@ -29,14 +29,13 @@ const config = {
   },
 };
 const Graph = () => {
-  const tot = useSelector((state) => state.total);
-
+  const tot = useSelector((state) => state.totBalance.totBalance);
+  console.log(tot);
   return (
     <div className="flex justify-content max-w-xs-mx-auto">
       <span>
-        Account Balance-
+        Account Balance-{tot[0].totAmount}
         <CurrencyRupeeIcon style={{ fontSize: "15px" }} />
-        {tot}
       </span>
       <div className="item">
         <div className="chart relative">

@@ -45,9 +45,9 @@ export const savingsReducer = (
       return state;
   }
 };
-export const totalBal = (
-  state = initialValue.totalAmount,
-  { type, payload }
-) => {
-  return state;
-};
+// export const totalBal = (
+//   state = initialValue.totalAmount,
+//   { type, payload }
+// ) => {
+//   return state;
+// };

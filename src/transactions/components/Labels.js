@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./label.css";
-import { getObjects } from "../../redux/actions/objActions";
+// import { getObjects } from "../../redux/actions/objActions";
 import { useSelector, useDispatch } from "react-redux";
 
 export default function Labels() {
@@ -25,7 +25,6 @@ export default function Labels() {
 }
 
 const LabelComponent = ({ data }) => {
-  const per = useSelector((state) => state.percent);
   if (!data) return <></>;
   return (
     <div className="label gap-2">
@@ -34,7 +33,7 @@ const LabelComponent = ({ data }) => {
         style={{ background: data.color ?? "#f9c74f" }}
       ></div>
       <h6 className="text">{data.type}</h6>
-      <h5 className="font-bold">{per}%</h5>
+      <h5 className="font-bold">{}%</h5>
       <div></div>
     </div>
   );
