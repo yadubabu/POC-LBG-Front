@@ -15,6 +15,9 @@
     border-bottom: 1px solid black;
     font-size: small;
 }
-.trans{
-    text-align: center;
+.trans>a:last-child{
+    list-style: none;
+}
+.trans,a{
+    text-decoration: none;
 }

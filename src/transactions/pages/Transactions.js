@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css";
 
 const Transactions = () => {
   return (
@@ -8,7 +9,7 @@ const Transactions = () => {
           <a href="/allTrans"> Transactions History</a>
         </li>
         <li>
-          <a href="expTrack">Expense Tracker</a>
+          <a href="/expTrack">Expense Tracker</a>
         </li>
       </ul>
     </div>

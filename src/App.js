@@ -16,11 +16,7 @@ const App = () => {
       <Router>
         <Header />
         <Routes>
-          <Route
-            path="/"
-            exact
-            element={<Home login="Login" register="Register" />}
-          />
+          <Route path="/" exact element={<Home />} />
           <Route path="/login" exact element={<Login />} />
           <Route path="/register" exact element={<Register />} />
           <Route path="/dashboard/:name" exact element={<Dashboard />} />

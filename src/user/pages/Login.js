@@ -26,7 +26,7 @@ const Login = () => {
   console.log(user);
   return (
     <div>
-      <Navbar login="" register="Register" />
+      <Navbar />
       <h1>Login</h1>
       {msg === "Login"
         ? setTimeout(() => {

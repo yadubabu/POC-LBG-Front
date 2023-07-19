@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 
-const Home = ({ login, register }) => {
+const Home = () => {
   return (
     <div>
       <Navbar />
